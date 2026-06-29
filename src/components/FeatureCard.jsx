@@ -1,59 +1,28 @@
-// FeatureCard Component
-// Receives icon and title from FeaturesSection.jsx
+import React from "react";
 
-function FeatureCard({ icon, title }) {
+function FeatureCard({ icon, title, active }) {
   return (
     <div
-      className="
-        group
+      className={`
+        p-10
+        rounded-lg
+        shadow
+        text-center
+        select-none
 
-        /* Card Layout */
-        h-56
-        flex
-        flex-col
-        justify-center
-        items-center
+        ${active ? "bg-sky-400 text-white" : "bg-white"}
 
-        /* Background */
-        bg-gray-50
-
-        /* Shadow */
-        shadow-md
-
-        /* Cursor */
-        cursor-pointer
-
-        /* Smooth Animation */
-        transition-all
-        duration-300
-
-        /* Move Up Slightly */
-        hover:-translate-y-2
-
-        /* Hover Color */
-        hover:bg-sky-400
-        hover:text-white
-      "
+        hover:shadow
+        hover:scale-100
+        hover:cursor-default
+        transition-none
+      `}
     >
-      {/* Icon */}
-      <div
-        className="
-          text-6xl
-          mb-6
-
-          /* Smooth Zoom */
-          transition-transform
-          duration-300
-
-          /* Zoom Icon */
-          group-hover:scale-110
-        "
-      >
+      <div className="flex justify-center text-5xl">
         {icon}
       </div>
 
-      {/* Title */}
-      <h3 className="text-xl font-semibold">
+      <h3 className="mt-5 font-semibold">
         {title}
       </h3>
     </div>

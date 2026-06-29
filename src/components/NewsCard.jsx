@@ -1,53 +1,44 @@
-// Single News Card Component
+import React from "react";
+
+import CustomImage from "./CustomImage";
 
 function NewsCard({
   image,
   title,
-  author,
-  date,
+  info,
+  description,
 }) {
   return (
-    <div className="w-full">
+    <div>
 
-      {/* Image */}
-      <img
+      <CustomImage
         src={image}
         alt={title}
-        className="w-full h-56 object-cover"
       />
 
-      {/* Title */}
-      <h2 className="text-xl font-medium mt-5">
+      <h3 className="text-xl font-semibold mt-5">
         {title}
-      </h2>
+      </h3>
 
-      {/* Author + Date + Link */}
-      <p className="text-gray-400 text-sm mt-2">
-        {author} - {date}
-        {" "}
-        <a
-          href="#"
-          className="text-orange-500"
-        >
-          News
-        </a>
+      <p className="text-sm text-gray-400 mt-2">
+        {info}
       </p>
 
-      {/* Description */}
-      <p className="text-gray-500 mt-3 leading-7">
-        Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Natus eligendi nobis ea
-        maiores sapiente veritatis reprehenderit
-        suscipit quaerat rerum voluptatibus a eius.
+      <p className="text-gray-500 mt-3">
+        {description}
       </p>
 
-      {/* Continue Reading Link */}
       <a
         href="#"
-        className="inline-block mt-5 text-orange-500"
+        className="
+        text-orange-500
+        block
+        mt-4
+        "
       >
         Continue Reading...
       </a>
+
     </div>
   );
 }
